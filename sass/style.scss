@@ -1,9 +1,62 @@
-.date-countdown-container {
-  display: flex;
+*,
+::before,
+::after {
+  font-size: 70px;
+  box-sizing: border-box;
+}
 
-  .number {
-    &::after {
-      content: ':';
+body {
+  background-color: bisque;
+  color: lightpink;
+}
+
+.date-countdown-container {
+  //   display: flex;
+
+  .flip-card {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 0.15em;
+
+    // &::after {
+    //   content: ':';
+    // }
+
+    &.flip {
+      &::before {
+        position: absolute;
+        content: '5';
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .top,
+    .bottom,
+    &.flip::before,
+    &.flip::after {
+      height: 0.75em;
+      line-height: 1;
+      padding: 0.25em;
+    }
+
+    .top,
+    &.flip::before {
+      background-color: rgb(0, 0, 0);
+      border-top-right-radius: 0.15em;
+      border-top-left-radius: 0.15em;
+      border-bottom: 0.5empx solid rgb(35, 35, 35);
+    }
+
+    .bottom,
+    &.flip::after {
+      background-color: rgb(57, 57, 57);
+      display: flex;
+      align-items: flex-end;
+      border-bottom-right-radius: 0.15em;
+      border-bottom-left-radius: 0.15em;
     }
   }
 }
