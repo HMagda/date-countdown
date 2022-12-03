@@ -1,0 +1,9 @@
+.date-countdown-container {
+  display: flex;
+
+  .number {
+    &::after {
+      content: ':';
+    }
+  }
+}
